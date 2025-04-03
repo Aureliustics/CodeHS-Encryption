@@ -11,8 +11,7 @@
 </ul>
 
 <h1>Example Usage</h1>
-```
-[Jicrypt]: Encrypt or decrypt? (1 or 2): 1
+```[Jicrypt]: Encrypt or decrypt? (1 or 2): 1
 [Jicrypt]: Enter the text you want to encrypt: my secret message
 [Jicrypt]: Enter a key (as an integer): 123
 Enable bloat? This can enhance security by obsecuring the length of your message. (Y or N): y
