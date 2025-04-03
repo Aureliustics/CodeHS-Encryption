@@ -25,5 +25,4 @@ Encrypted message:ùí´çñ÷æñà´ùñççõóñ~oAaET(P]D5']\r\x0bXqnQK#pJN
 Enter encrypted text: ùí´çñ÷æñà´ùñççõóñ~oAaET(P]D5']\r\x0bXqnQK#pJN}8RAFS>
 Enter the key to decrypt the message: 123
 Bloat (0 if none): 17
-Decrypted message: my secret message
-```
+Decrypted message: my secret message```
