@@ -42,6 +42,7 @@ def Jicrypt(): # logic for selecting options
             print("[Jicrypt]: Generated bloat (Remember this): " + str(bloat))
         exit_routine = int(input("[Jicrypt]: Run again (1) or exit (2): "))
         if exit_routine == 1:
+            print("\n")
             Jicrypt()
         elif exit_routine == 2:
             print("[Jicrypt]: Exitting...")
@@ -55,6 +56,7 @@ def Jicrypt(): # logic for selecting options
         print("Decrypted message: " + decrypted_text)
         exit_routine = int(input("[Jicrypt]: Run again (1) or exit (2): "))
         if exit_routine == 1:
+            print("\n")
             Jicrypt()
         else:
             print("[Jicrypt]: Exitting...")
