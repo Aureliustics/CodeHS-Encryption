@@ -1,6 +1,13 @@
 import random
 import string
 
+def byte_conversion(input_bytes, PIM, direction): # using bitwise operations to shift bytes
+    if direction == 0: # left
+        output_bytes = input_bytes << PIM # shift bytes left by pushing zeros in from the right and let the leftmost bits fall off
+    elif direction == 1: # right
+        output_bytes = input_bytes >> PIM # shift bytes right by pushing zeros in from the left and let the leftmost bits fall off
+    return ~output_bytes # byte inversion for further measure
+
 def string_encrypt(text, key):
     encrypted = ''.join([chr((ord(char) ^ key) % 256) for char in text])
     return encrypted
@@ -11,7 +18,7 @@ def string_decrypt(encrypted_text, key):
 
 def xor_encrypt(text, key, bloat_option):
     bloat = "" # nothing by default
-    key = key ^ 0xABCDEF  # add further encryption by masking the key
+    key = byte_conversion(key, len(text), 0) ^ 0xABCDEF # add further encryption by masking the key
 
     encoded = string_encrypt(text, key)
     if bloat_option.lower() == "y":
@@ -21,7 +28,7 @@ def xor_encrypt(text, key, bloat_option):
     return encrypted_message, len(text)
 
 def xor_decrypt(encoded_text, key, bloat = 0):
-    key = key ^ 0xABCDEF # undo the key masking
+    key = byte_conversion(key, len(encoded_text), 1) ^ 0xABCDEF # undo the key masking
     if bloat > 0: # checks if bloat was used and cuts the bloat accordingly
         encrypted_text = encoded_text[:bloat] # remove bloat if there is any
     else:
