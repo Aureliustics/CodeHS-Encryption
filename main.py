@@ -1,11 +1,11 @@
 import random
 import string
 
-def byte_conversion(input_bytes, PIM, direction): # using bitwise operations to shift bytes
+def byte_conversion(input_bytes, amount, direction): # using bitwise operations to shift bytes
     if direction == 0: # left
-        output_bytes = input_bytes << PIM # shift bytes left by pushing zeros in from the right and let the leftmost bits fall off
+        output_bytes = input_bytes << amount # shift bytes left by pushing zeros in from the right and let the leftmost bits fall off
     elif direction == 1: # right
-        output_bytes = input_bytes >> PIM # shift bytes right by pushing zeros in from the left and let the leftmost bits fall off
+        output_bytes = input_bytes >> amount # shift bytes right by pushing zeros in from the left and let the leftmost bits fall off
     return ~output_bytes # byte inversion for further measure
 
 def string_encrypt(text, key):
