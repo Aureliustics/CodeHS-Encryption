@@ -113,7 +113,7 @@ def xor_decrypt(encoded_text, key, bloat = 0):
 def Jicrypt(): # logic for selecting options
     choice = int(input("[Jicrypt]: Encrypt or decrypt? (1 or 2): "))
     if choice == 1:
-        base64(1, str(input("[Jicrypt]: Enter the text you want to encrypt: ")))
+        text = base64(1, str(input("[Jicrypt]: Enter the text you want to encrypt: ")))
         key = int(input("[Jicrypt]: Enter a key (as an integer): "))
         bloat_option = str(input("Enable bloat? This can enhance security by obsecuring the length of your message. (Y or N): "))
 
